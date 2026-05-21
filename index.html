@@ -830,14 +830,14 @@
   <div class="hero-card form-card active" id="step-0">
     <div class="hero-banner">
       <span class="hero-chip">REGOLAMENTO MACCHINE · 20 GENNAIO 2027</span>
-      <h1 class="hero-title"><span>Mancano pochi mesi.</span><br>La tua macchina è pronta?</h1>
-      <p class="hero-subtitle">Dal 20 gennaio 2027 chi non è conforme al Regolamento Macchine (UE) 2023/1230 non può vendere in Europa. Farlo internamente da zero richiede 9–12 mesi e fino a €150.000. Rispondi a 10 domande e scopri subito quanto sei preparato.</p>
+      <h1 class="hero-title"><span>Mancano pochi mesi.</span><br>Sei pronto al Regolamento Macchine 2027?</h1>
+      <p class="hero-subtitle">Ci vogliono 2 minuti. Tu scopri dove sei rispetto alla scadenza del 2027, noi scopriamo se e come possiamo esserti utili. Se non siamo la soluzione giusta per te il White Paper è tuo in ogni caso, gratis.</p>
     </div>
     <div class="hero-body">
       <div class="reward-box">
         <div class="reward-icon">📄</div>
         <div class="reward-text">
-          <h3>White Paper gratuito — solo per chi compila il questionario</h3>
+          <h3>White Paper gratuito — compilando il questionario</h3>
           <p>«Regolamento Macchine 2023/1230 — Certificazione del Software per le Funzioni di Sicurezza» · Cosa ti chiede la legge, cosa rischi se non sei pronto, come una libreria pre-certificata ti fa risparmiare fino a €130.000 · Documento riservato A-PRO2 · Scopri subito se il tuo macchinario sarà pronto in tempo.</p>
         </div>
       </div>
@@ -949,7 +949,7 @@
     <div class="section-body">
 
       <div class="field-group">
-        <span class="question-label">Eri già a conoscenza del Regolamento Macchine (UE) 2023/1230 che entra in vigore il 20 gennaio 2027?</span>
+        <span class="question-label">Conosci il Regolamento Macchine (UE) 2023/1230 che entra in vigore il 20 gennaio 2027?</span>
         <div class="options-list" id="q-conoscenza">
           <label class="option-item"><input type="radio" name="conoscenza" value="si-sto-lavorando"><span class="option-text">Sì, lo conosco bene e stiamo già lavorando alla conformità</span></label>
           <label class="option-item"><input type="radio" name="conoscenza" value="sentito-non-approfondito"><span class="option-text">Ne ho sentito parlare ma non ho ancora approfondito</span></label>
@@ -961,7 +961,7 @@
       <hr class="q-divider">
 
       <div class="field-group">
-        <span class="question-label">Sapevi che il nuovo Regolamento introduce obblighi specifici sul <em>software</em> delle funzioni di sicurezza — non solo sull'hardware?</span>
+        <span class="question-label">Sai che il nuovo Regolamento introduce obblighi specifici sul software delle funzioni di sicurezza?</span>
         <div class="options-list" id="q-software-obbligo">
           <label class="option-item"><input type="radio" name="softwareobbligo" value="si"><span class="option-text">Sì, ne ero già a conoscenza</span></label>
           <label class="option-item"><input type="radio" name="softwareobbligo" value="parziale"><span class="option-text">Lo sapevo ma non nei dettagli</span></label>
@@ -996,7 +996,7 @@
     <div class="section-body">
 
       <div class="field-group">
-        <span class="question-label">Hai già avviato attività legate alla conformità al Regolamento 2027?</span>
+        <span class="question-label">Stai già lavorando alla conformità al Regolamento 2027?</span>
         <div class="options-list" id="q-avanzamento">
           <label class="option-item"><input type="radio" name="avanzamento" value="piano-strutturato"><span class="option-text">Sì, abbiamo già un piano strutturato e siamo operativi</span></label>
           <label class="option-item"><input type="radio" name="avanzamento" value="valutazione"><span class="option-text">Abbiamo iniziato a valutare la situazione</span></label>
@@ -1282,20 +1282,20 @@
     // Level config — 3 livelli tema missione spaziale
     let level, levelClass, tagline, desc;
     if (finalScore >= 6.5) {
-      level = '🚀 "HOUSTON, NESSUN PROBLEMA"';
+      level = '🚀 "PRONTI AL LANCIO"';
       levelClass = 'green';
-      tagline = 'Tutti i sistemi sono operativi. Sei pronto al lancio.';
-      desc = 'Il 20 gennaio 2027 è più vicino di quanto sembri. Contatta A-PRO2 per scoprire quanto puoi risparmiare rispetto a quello che stai già facendo.';
+      tagline = 'Tutti i sistemi sono operativi. La missione è partita.';
+      desc = 'Sei già sulla buona strada. Spiegaci meglio dove sei arrivato e vediamo insieme se c\'è qualcosa che possiamo fare per te.';
     } else if (finalScore >= 3.5) {
       level = '⚠️ "CODICE ARANCIO"';
       levelClass = 'orange';
       tagline = 'Il conto alla rovescia è partito, ma c\'è ancora molto da fare.';
-      desc = 'Il 20 gennaio 2027 è più vicino di quanto sembri. È il momento di agire subito. Contatta A-PRO2 per capire cosa fare per arrivare in tempo.';
+      desc = 'Il 20 gennaio 2027 è più vicino di quanto sembri. Raccontaci la tua situazione — vediamo insieme cosa si può fare e se siamo le persone giuste per aiutarti.';
     } else {
       level = '🆘 "HOUSTON, ABBIAMO UN PROBLEMA"';
       levelClass = 'red';
-      tagline = 'Il razzo è ancora in officina. E il 2027 non aspetta.';
-      desc = 'Il 20 gennaio 2027 è più vicino di quanto sembri. È il momento di agire subito. Contatta A-PRO2 per capire cosa fare per arrivare in tempo.';
+      tagline = 'Il razzo è ancora in officina. E il 2027 è più vicino di quanto sembri.';
+      desc = 'È il momento di agire subito. Contattaci e capiamo insieme se e come possiamo aiutarti ad arrivare in tempo.';
     }
 
     // ── INVIA A GOOGLE SHEETS ──
