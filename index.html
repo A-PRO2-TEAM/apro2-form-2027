@@ -935,12 +935,13 @@
         <div class="field-group" id="altri-mobili-field" style="margin-top:8px;display:none;">
           <input type="text" id="altriMobiliSpec" placeholder="Specificare..." style="border-color:var(--border);">
         </div>
+        <span class="error-msg" id="err-macchine">Seleziona almeno una risposta</span>
       </div>
 
     </div>
     <div class="nav-row">
       <button class="btn btn-secondary" onclick="goTo(1)">← Indietro</button>
-      <button class="btn btn-primary" onclick="goTo(3)">Avanti →</button>
+      <button class="btn btn-primary" onclick="validateStep2()">Avanti →</button>
     </div>
   </div>
 
@@ -960,6 +961,7 @@
           <label class="option-item"><input type="radio" name="conoscenza" value="parziale"><span class="option-text">Ne ero a conoscenza solo in modo parziale</span></label>
           <label class="option-item"><input type="radio" name="conoscenza" value="no"><span class="option-text">No, è la prima volta che ne sento parlare</span></label>
         </div>
+        <span class="error-msg" id="err-conoscenza">Seleziona una risposta</span>
       </div>
 
       <hr class="q-divider">
@@ -971,6 +973,7 @@
           <label class="option-item"><input type="radio" name="softwareobbligo" value="parziale"><span class="option-text">Lo sapevo ma non nei dettagli</span></label>
           <label class="option-item"><input type="radio" name="softwareobbligo" value="no"><span class="option-text">No, non lo sapevo</span></label>
         </div>
+        <span class="error-msg" id="err-softwareobbligo">Seleziona una risposta</span>
       </div>
 
       <hr class="q-divider">
@@ -982,12 +985,13 @@
           <label class="option-item"><input type="radio" name="importanza" value="poco"><span class="option-text">Poco importante</span></label>
           <label class="option-item"><input type="radio" name="importanza" value="non-interessa"><span class="option-text">Non mi interessa</span></label>
         </div>
+        <span class="error-msg" id="err-importanza">Seleziona una risposta</span>
       </div>
 
     </div>
     <div class="nav-row">
       <button class="btn btn-secondary" onclick="goTo(2)">← Indietro</button>
-      <button class="btn btn-primary" onclick="goTo(4)">Avanti →</button>
+      <button class="btn btn-primary" onclick="validateStep3()">Avanti →</button>
     </div>
   </div>
 
@@ -1007,6 +1011,7 @@
           <label class="option-item"><input type="radio" name="avanzamento" value="no-ancora"><span class="option-text">No, non ancora</span></label>
           <label class="option-item"><input type="radio" name="avanzamento" value="non-priorita"><span class="option-text">Non è ancora una priorità al momento</span></label>
         </div>
+        <span class="error-msg" id="err-avanzamento">Seleziona una risposta</span>
       </div>
 
       <hr class="q-divider">
@@ -1019,6 +1024,7 @@
           <label class="option-item"><input type="radio" name="gestione" value="non-deciso"><span class="option-text">Non ho ancora deciso</span></label>
           <label class="option-item"><input type="radio" name="gestione" value="misto"><span class="option-text">Approccio misto (interno + esterno)</span></label>
         </div>
+        <span class="error-msg" id="err-gestione">Seleziona una risposta</span>
       </div>
 
       <hr class="q-divider">
@@ -1030,6 +1036,7 @@
           <label class="option-item"><input type="radio" name="vmodel" value="sentito-non-applichiamo"><span class="option-text">Ne ho sentito parlare ma non lo applichiamo</span></label>
           <label class="option-item"><input type="radio" name="vmodel" value="no"><span class="option-text">No, è la prima volta che ne sento parlare</span></label>
         </div>
+        <span class="error-msg" id="err-vmodel">Seleziona una risposta</span>
       </div>
 
       <hr class="q-divider">
@@ -1042,12 +1049,13 @@
           <label class="option-item"><input type="radio" name="documenti" value="zero"><span class="option-text">No, dobbiamo iniziare da zero</span></label>
           <label class="option-item"><input type="radio" name="documenti" value="non-so"><span class="option-text">Non so bene di cosa si tratta</span></label>
         </div>
+        <span class="error-msg" id="err-documenti">Seleziona una risposta</span>
       </div>
 
     </div>
     <div class="nav-row">
       <button class="btn btn-secondary" onclick="goTo(3)">← Indietro</button>
-      <button class="btn btn-primary" onclick="goTo(5)">Avanti →</button>
+      <button class="btn btn-primary" onclick="validateStep4()">Avanti →</button>
     </div>
   </div>
 
@@ -1231,6 +1239,48 @@
       }
     });
     if (valid) goTo(2);
+  }
+
+  function validateStep2() {
+    let valid = true;
+    const macchine = document.querySelectorAll('input[name="macchine"]:checked');
+    const errMacchine = document.getElementById('err-macchine');
+    if (macchine.length === 0) { errMacchine.classList.add('visible'); valid = false; }
+    else errMacchine.classList.remove('visible');
+    if (valid) goTo(3);
+  }
+
+  function validateStep3() {
+    let valid = true;
+    const checks = [
+      { name: 'conoscenza', errId: 'err-conoscenza' },
+      { name: 'softwareobbligo', errId: 'err-softwareobbligo' },
+      { name: 'importanza', errId: 'err-importanza' },
+    ];
+    checks.forEach(c => {
+      const el = document.querySelector(`input[name="${c.name}"]:checked`);
+      const err = document.getElementById(c.errId);
+      if (!el) { err.classList.add('visible'); valid = false; }
+      else err.classList.remove('visible');
+    });
+    if (valid) goTo(4);
+  }
+
+  function validateStep4() {
+    let valid = true;
+    const checks = [
+      { name: 'avanzamento', errId: 'err-avanzamento' },
+      { name: 'gestione', errId: 'err-gestione' },
+      { name: 'vmodel', errId: 'err-vmodel' },
+      { name: 'documenti', errId: 'err-documenti' },
+    ];
+    checks.forEach(c => {
+      const el = document.querySelector(`input[name="${c.name}"]:checked`);
+      const err = document.getElementById(c.errId);
+      if (!el) { err.classList.add('visible'); valid = false; }
+      else err.classList.remove('visible');
+    });
+    if (valid) goTo(5);
   }
 
   function validateStep5() {
