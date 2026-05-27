@@ -931,6 +931,9 @@
           <label class="option-item"><input type="checkbox" name="macchine" value="carrelli"><span class="option-text">Carrelli elevatori</span></label>
           <label class="option-item"><input type="checkbox" name="macchine" value="altri-mobili"><span class="option-text">Altri macchinari mobili</span></label>
         </div>
+        <div class="field-group" id="altri-mobili-field" style="margin-top:8px;display:none;">
+          <input type="text" id="altriMobiliSpec" placeholder="Specificare..." style="border-color:var(--border);">
+        </div>
       </div>
 
     </div>
@@ -972,11 +975,11 @@
       <hr class="q-divider">
 
       <div class="field-group">
-        <span class="question-label">Conosci il V-model e la documentazione richiesta (SRS, test case, test report, matrice di tracciabilità)?</span>
-        <div class="options-list" id="q-vmodel">
-          <label class="option-item"><input type="radio" name="vmodel" value="si-applichiamo"><span class="option-text">Sì, lo applichiamo già</span></label>
-          <label class="option-item"><input type="radio" name="vmodel" value="sentito-non-applichiamo"><span class="option-text">Ne ho sentito parlare ma non lo applichiamo</span></label>
-          <label class="option-item"><input type="radio" name="vmodel" value="no"><span class="option-text">No, è la prima volta che ne sento parlare</span></label>
+        <span class="question-label">Quanto definiresti importante la necessità di adeguarsi al nuovo Regolamento Macchine?</span>
+        <div class="options-list" id="q-importanza">
+          <label class="option-item"><input type="radio" name="importanza" value="molto"><span class="option-text">Molto importante</span></label>
+          <label class="option-item"><input type="radio" name="importanza" value="poco"><span class="option-text">Poco importante</span></label>
+          <label class="option-item"><input type="radio" name="importanza" value="non-interessa"><span class="option-text">Non mi interessa</span></label>
         </div>
       </div>
 
@@ -1020,12 +1023,23 @@
       <hr class="q-divider">
 
       <div class="field-group">
+        <span class="question-label">Conosci il V-model e la documentazione richiesta (SRS, test case, test report, matrice di tracciabilità)?</span>
+        <div class="options-list" id="q-vmodel">
+          <label class="option-item"><input type="radio" name="vmodel" value="si-applichiamo"><span class="option-text">Sì, lo applichiamo già</span></label>
+          <label class="option-item"><input type="radio" name="vmodel" value="sentito-non-applichiamo"><span class="option-text">Ne ho sentito parlare ma non lo applichiamo</span></label>
+          <label class="option-item"><input type="radio" name="vmodel" value="no"><span class="option-text">No, è la prima volta che ne sento parlare</span></label>
+        </div>
+      </div>
+
+      <hr class="q-divider">
+
+      <div class="field-group">
         <span class="question-label">Disponi già di un Safety Management Plan?</span>
         <div class="options-list" id="q-documenti">
-          <label class="option-item"><input type="radio" name="documenti" value="entrambi"><span class="option-text">Sì, abbiamo già tutti i documenti</span></label>
-          <label class="option-item"><input type="radio" name="documenti" value="parziali"><span class="option-text">Abbiamo solo alcuni documenti parziali</span></label>
+          <label class="option-item"><input type="radio" name="documenti" value="implementato"><span class="option-text">Sì, lo abbiamo già implementato</span></label>
+          <label class="option-item"><input type="radio" name="documenti" value="in-corso"><span class="option-text">Sì, abbiamo iniziato a implementarlo</span></label>
           <label class="option-item"><input type="radio" name="documenti" value="zero"><span class="option-text">No, dobbiamo iniziare da zero</span></label>
-          <label class="option-item"><input type="radio" name="documenti" value="non-so"><span class="option-text">Non so bene cosa siano</span></label>
+          <label class="option-item"><input type="radio" name="documenti" value="non-so"><span class="option-text">Non so bene di cosa si tratta</span></label>
         </div>
       </div>
 
@@ -1045,20 +1059,28 @@
     <div class="section-body">
 
       <div class="field-group">
-        <span class="question-label">Qual è il budget che hai già stanziato (o stai pianificando) per la certificazione software nel 2026–2027?</span>
-        <div class="options-list" id="q-budget">
-          <label class="option-item"><input type="radio" name="budget" value="<20k"><span class="option-text">Meno di €20.000</span></label>
-          <label class="option-item"><input type="radio" name="budget" value="20-50k"><span class="option-text">Tra €20.000 e €50.000</span></label>
-          <label class="option-item"><input type="radio" name="budget" value="50-100k"><span class="option-text">Tra €50.000 e €100.000</span></label>
-          <label class="option-item"><input type="radio" name="budget" value=">100k"><span class="option-text">Oltre €100.000</span></label>
-          <label class="option-item"><input type="radio" name="budget" value="non-definito"><span class="option-text">Non è ancora stato definito — dobbiamo farlo urgentemente</span></label>
+        <span class="question-label">Saresti disposto ad acquistare librerie software già certificate per le funzioni di sicurezza?</span>
+        <div class="options-list" id="q-libreria">
+          <label class="option-item"><input type="radio" name="libreria" value="si-subito"><span class="option-text">Sì, assolutamente — è esattamente quello che sto cercando</span></label>
+          <label class="option-item"><input type="radio" name="libreria" value="si-se-rapido"><span class="option-text">Sì, se risulta più rapido che farlo internamente</span></label>
+          <label class="option-item"><input type="radio" name="libreria" value="forse-info"><span class="option-text">Forse — vorrei prima capire meglio cosa include e come funziona</span></label>
+          <label class="option-item"><input type="radio" name="libreria" value="no-interno"><span class="option-text">No, preferiamo gestire tutto internamente</span></label>
+          <label class="option-item"><input type="radio" name="libreria" value="no-consulenti"><span class="option-text">No, ci affidiamo già a consulenti esterni</span></label>
         </div>
       </div>
 
       <hr class="q-divider">
 
       <div class="field-group">
-        <span class="question-label">Quali sono i principali ostacoli per essere conforme entro il 2027? <span class="badge">SCELTA MULTIPLA</span></span>
+        <span class="question-label">Per avere un'idea chiara dell'importanza che ha per te questa tematica, ti chiediamo di quantificarla a livello economico. Potresti indicare una forbice di spesa che pensi abbia senso per adeguarti? Se hai già svolto attività, qual è stato il budget precedentemente individuato?</span>
+        <p style="font-size:13px;color:var(--grey);margin:6px 0 10px;font-style:italic;">Inserisci una forbice per darci un'idea — ci serve per capire se possiamo esserti di aiuto.</p>
+        <textarea id="budget" name="budget" placeholder="Es. tra €30.000 e €50.000 / non ancora definito / abbiamo già speso circa €X..." style="min-height:80px;"></textarea>
+      </div>
+
+      <hr class="q-divider">
+
+      <div class="field-group">
+        <span class="question-label">Quali pensi che siano i principali ostacoli per essere conforme entro il 2027? <span class="badge">SCELTA MULTIPLA</span></span>
         <div class="options-list" id="q-ostacolo">
           <label class="option-item"><input type="checkbox" name="ostacolo" value="competenze-software"><span class="option-text">Mancanza di competenze interne sul software safety</span></label>
           <label class="option-item"><input type="checkbox" name="ostacolo" value="competenze-doc"><span class="option-text">Mancanza di competenze interne sulla documentazione safety</span></label>
@@ -1071,13 +1093,12 @@
       <hr class="q-divider">
 
       <div class="field-group">
-        <span class="question-label">Saresti disposto ad acquistare una libreria software pre-certificata per le funzioni di sicurezza?</span>
-        <div class="options-list" id="q-libreria">
-          <label class="option-item"><input type="radio" name="libreria" value="si-subito"><span class="option-text">Sì, assolutamente — è esattamente quello che sto cercando</span></label>
-          <label class="option-item"><input type="radio" name="libreria" value="si-se-rapido"><span class="option-text">Sì, se risulta più rapido che farlo internamente</span></label>
-          <label class="option-item"><input type="radio" name="libreria" value="forse-info"><span class="option-text">Forse — vorrei prima capire meglio cosa include e come funziona</span></label>
-          <label class="option-item"><input type="radio" name="libreria" value="no-interno"><span class="option-text">No, preferiamo gestire tutto internamente</span></label>
-          <label class="option-item"><input type="radio" name="libreria" value="no-consulenti"><span class="option-text">No, ci affidiamo già a consulenti esterni</span></label>
+        <span class="question-label">Se la cifra da stanziare fosse più alta di quello che immaginavi, sarebbe un problema?</span>
+        <div class="options-list" id="q-budget-problema">
+          <label class="option-item"><input type="radio" name="budgetproblema" value="si"><span class="option-text">Sì</span></label>
+          <label class="option-item"><input type="radio" name="budgetproblema" value="forse"><span class="option-text">Forse</span></label>
+          <label class="option-item"><input type="radio" name="budgetproblema" value="no"><span class="option-text">No</span></label>
+          <label class="option-item"><input type="radio" name="budgetproblema" value="valutare"><span class="option-text">Non so, dovrei valutare meglio</span></label>
         </div>
       </div>
 
@@ -1213,15 +1234,18 @@
       email: document.getElementById('email').value.trim(),
       telefono: document.getElementById('telefono').value.trim(),
       macchine: [...document.querySelectorAll('input[name="macchine"]:checked')].map(el => el.value),
+      altriMobiliSpec: document.getElementById('altriMobiliSpec')?.value.trim() || '',
       conoscenza: document.querySelector('input[name="conoscenza"]:checked')?.value || '',
       softwareobbligo: document.querySelector('input[name="softwareobbligo"]:checked')?.value || '',
+      importanza: document.querySelector('input[name="importanza"]:checked')?.value || '',
       vmodel: document.querySelector('input[name="vmodel"]:checked')?.value || '',
       avanzamento: document.querySelector('input[name="avanzamento"]:checked')?.value || '',
       gestione: document.querySelector('input[name="gestione"]:checked')?.value || '',
       documenti: document.querySelector('input[name="documenti"]:checked')?.value || '',
-      budget: document.querySelector('input[name="budget"]:checked')?.value || '',
-      ostacolo: [...document.querySelectorAll('input[name="ostacolo"]:checked')].map(el => el.value),
       libreria: document.querySelector('input[name="libreria"]:checked')?.value || '',
+      budget: document.getElementById('budget')?.value.trim() || '',
+      ostacolo: [...document.querySelectorAll('input[name="ostacolo"]:checked')].map(el => el.value),
+      budgetproblema: document.querySelector('input[name="budgetproblema"]:checked')?.value || '',
       note: document.getElementById('note').value.trim(),
       timestamp: new Date().toISOString()
     };
@@ -1308,15 +1332,18 @@
       email:            data.email,
       telefono:         data.telefono,
       macchine:         Array.isArray(data.macchine) ? data.macchine.join(', ') : (data.macchine || ''),
+      altriMobiliSpec:  data.altriMobiliSpec,
       conoscenza:       data.conoscenza,
       softwareobbligo:  data.softwareobbligo,
+      importanza:       data.importanza,
       vmodel:           data.vmodel,
       avanzamento:      data.avanzamento,
       gestione:         data.gestione,
       documenti:        data.documenti,
+      libreria:         data.libreria,
       budget:           data.budget,
       ostacolo:         Array.isArray(data.ostacolo) ? data.ostacolo.join(', ') : (data.ostacolo || ''),
-      libreria:         data.libreria,
+      budgetproblema:   data.budgetproblema,
       note:             data.note,
       punteggio:        finalScore + '/10 — ' + level
     });
@@ -1362,8 +1389,11 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Auto-style option items on change
+  // Show/hide campo "Altri macchinari mobili - specificare"
   document.addEventListener('change', function(e) {
+    if (e.target.name === 'macchine' && e.target.value === 'altri-mobili') {
+      document.getElementById('altri-mobili-field').style.display = e.target.checked ? 'block' : 'none';
+    }
     const input = e.target;
     if (input.type === 'radio') {
       const list = input.closest('.options-list');
